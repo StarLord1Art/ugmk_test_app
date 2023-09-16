@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Pie } from "@ant-design/plots";
 import { useLocation } from "react-router-dom";
 
@@ -8,11 +8,11 @@ function Details() {
 
   const data = [
     {
-      type: "Product 1",
+      type: "Продукт 1",
       value: state.data.product1,
     },
     {
-      type: "Product 2",
+      type: "Продукт 2",
       value: state.data.product2,
     },
   ];
@@ -42,7 +42,7 @@ function Details() {
     <>
       <h1>
         Статистика по продукции{" "}
-        {state.data.name === "Factory A" ? "Фабрика А" : "Фабрика Б"} за{" "}
+        {state.data.name === "Фабрика А" ? "фабрики А" : "фабрики Б"} за{" "}
         {state.data.month}
       </h1>
       <Pie {...config} />

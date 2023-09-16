@@ -1,12 +1,17 @@
 import React from "react";
-import Chart2 from "./Graph";
+import Graph from "./Graph";
 import Filter from "./Filter";
+import "./styles/Main.css";
 
 function Main() {
   return (
     <>
-      <Filter />
-      <Chart2 />
+      <div className="main_div" style={{ width: "53%", textAlign: "right" }}>
+        <Filter />
+      </div>
+      <div className="main_div" style={{ padding: "5px 20px" }}>
+        <Graph />
+      </div>
     </>
   );
 }

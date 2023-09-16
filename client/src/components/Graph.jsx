@@ -54,7 +54,7 @@ const DemoColumn = () => {
           console.log(args.data.data);
           let data = args.data.data;
           let month = data.date.split("/")[1];
-          let name = data.name === "Factory A" ? 1 : 2;
+          let name = data.name === "Фабрика А" ? 1 : 2;
           navigate(`/details/${name}/${month}`, {
             state: {
               data,

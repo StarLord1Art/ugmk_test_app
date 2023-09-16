@@ -9,7 +9,7 @@ const Filter = () => {
   const items = [
     {
       key: "1",
-      label: "Products Sum",
+      label: "Все продукты",
       onClick: () => {
         object.setProduct1(false);
         object.setProduct2(false);
@@ -17,7 +17,7 @@ const Filter = () => {
     },
     {
       key: "2",
-      label: "Product 1",
+      label: "Продукт 1",
       onClick: () => {
         object.setProduct1(true);
         object.setProduct2(false);
@@ -25,7 +25,7 @@ const Filter = () => {
     },
     {
       key: "3",
-      label: "Product 2",
+      label: "Продукт 2",
       onClick: () => {
         object.setProduct1(false);
         object.setProduct2(true);
@@ -43,7 +43,7 @@ const Filter = () => {
     >
       <Typography.Link>
         <Space>
-          Select Product
+          Фильтр по типу продукции
           <DownOutlined />
         </Space>
       </Typography.Link>

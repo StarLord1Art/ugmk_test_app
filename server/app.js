@@ -66,29 +66,29 @@ app.get("/", (req, res) => {
       for (let i = 0; i < factoryA.length; i++) {
         const element = factoryA[i];
         if (element.date.split("/")[1] === "1") {
-          addSum("Factory A", "Янв", element, sum);
+          addSum("Фабрика А", "Янв", element, sum);
         } else if (element.date.split("/")[1] === "2") {
-          addSum("Factory A", "Фев", element, sum);
+          addSum("Фабрика А", "Фев", element, sum);
         } else if (element.date.split("/")[1] === "3") {
-          addSum("Factory A", "Мар", element, sum);
+          addSum("Фабрика А", "Мар", element, sum);
         } else if (element.date.split("/")[1] === "4") {
-          addSum("Factory A", "Апр", element, sum);
+          addSum("Фабрика А", "Апр", element, sum);
         } else if (element.date.split("/")[1] === "5") {
-          addSum("Factory A", "Май", element, sum);
+          addSum("Фабрика А", "Май", element, sum);
         } else if (element.date.split("/")[1] === "6") {
-          addSum("Factory A", "Июн", element, sum);
+          addSum("Фабрика А", "Июн", element, sum);
         } else if (element.date.split("/")[1] === "7") {
-          addSum("Factory A", "Июл", element, sum);
+          addSum("Фабрика А", "Июл", element, sum);
         } else if (element.date.split("/")[1] === "8") {
-          addSum("Factory A", "Авг", element, sum);
+          addSum("Фабрика А", "Авг", element, sum);
         } else if (element.date.split("/")[1] === "9") {
-          addSum("Factory A", "Сен", element, sum);
+          addSum("Фабрика А", "Сен", element, sum);
         } else if (element.date.split("/")[1] === "10") {
-          addSum("Factory A", "Окт", element, sum);
+          addSum("Фабрика А", "Окт", element, sum);
         } else if (element.date.split("/")[1] === "11") {
-          addSum("Factory A", "Ноя", element, sum);
+          addSum("Фабрика А", "Ноя", element, sum);
         } else if (element.date.split("/")[1] === "12") {
-          addSum("Factory A", "Дек", element, sum);
+          addSum("Фабрика А", "Дек", element, sum);
         }
       }
       sum = sum.filter(
@@ -98,29 +98,29 @@ app.get("/", (req, res) => {
       for (let i = 0; i < factoryB.length; i++) {
         const element = factoryB[i];
         if (element.date.split("/")[1] === "1") {
-          addSum("Factory B", "Янв", element, sum2);
+          addSum("Фабрика Б", "Янв", element, sum2);
         } else if (element.date.split("/")[1] === "2") {
-          addSum("Factory B", "Фев", element, sum2);
+          addSum("Фабрика Б", "Фев", element, sum2);
         } else if (element.date.split("/")[1] === "3") {
-          addSum("Factory B", "Мар", element, sum2);
+          addSum("Фабрика Б", "Мар", element, sum2);
         } else if (element.date.split("/")[1] === "4") {
-          addSum("Factory B", "Апр", element, sum2);
+          addSum("Фабрика Б", "Апр", element, sum2);
         } else if (element.date.split("/")[1] === "5") {
-          addSum("Factory B", "Май", element, sum2);
+          addSum("Фабрика Б", "Май", element, sum2);
         } else if (element.date.split("/")[1] === "6") {
-          addSum("Factory B", "Июн", element, sum2);
+          addSum("Фабрика Б", "Июн", element, sum2);
         } else if (element.date.split("/")[1] === "7") {
-          addSum("Factory B", "Июл", element, sum2);
+          addSum("Фабрика Б", "Июл", element, sum2);
         } else if (element.date.split("/")[1] === "8") {
-          addSum("Factory B", "Авг", element, sum2);
+          addSum("Фабрика Б", "Авг", element, sum2);
         } else if (element.date.split("/")[1] === "9") {
-          addSum("Factory B", "Сен", element, sum2);
+          addSum("Фабрика Б", "Сен", element, sum2);
         } else if (element.date.split("/")[1] === "10") {
-          addSum("Factory B", "Окт", element, sum2);
+          addSum("Фабрика Б", "Окт", element, sum2);
         } else if (element.date.split("/")[1] === "11") {
-          addSum("Factory B", "Ноя", element, sum2);
+          addSum("Фабрика Б", "Ноя", element, sum2);
         } else if (element.date.split("/")[1] === "12") {
-          addSum("Factory B", "Дек", element, sum2);
+          addSum("Фабрика Б", "Дек", element, sum2);
         }
       }
       sum2 = sum2.filter(
