@@ -6,8 +6,7 @@ import Main from "./components/Main";
 import Details from "./components/Details";
 
 function App() {
-  const [product1, setProduct1] = useState(false);
-  const [product2, setProduct2] = useState(false);
+  const [defaultValue, setDefaultValue] = useState("");
 
   const router = createBrowserRouter([
     {
@@ -23,10 +22,8 @@ function App() {
   return (
     <Context.Provider
       value={{
-        product1: product1,
-        setProduct1: setProduct1,
-        product2: product2,
-        setProduct2: setProduct2,
+        defaultValue: defaultValue,
+        setDefaultValue: setDefaultValue,
       }}
     >
       <div className="App">

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const DemoColumn = () => {
   const [data, setData] = useState([]);
-  const { product1, product2 } = useContext(Context);
+  const { defaultValue } = useContext(Context);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,7 +27,11 @@ const DemoColumn = () => {
     isGroup: true,
     xField: "month",
     yField:
-      product1 === true ? "product1" : product2 === true ? "product2" : "sum",
+      defaultValue === "Продукт 1"
+        ? "product1"
+        : defaultValue === "Продукт 2"
+        ? "product2"
+        : "sum",
     seriesField: "name",
     color: ["red", "blue"],
     legend: {
@@ -49,19 +53,17 @@ const DemoColumn = () => {
       ],
     },
     onReady: (plot) => {
-      if (product1 === false && product2 === false) {
-        plot.on("element:click", (args) => {
-          console.log(args.data.data);
-          let data = args.data.data;
-          let month = data.date.split("/")[1];
-          let name = data.name === "Фабрика А" ? 1 : 2;
-          navigate(`/details/${name}/${month}`, {
-            state: {
-              data,
-            },
-          });
+      plot.on("element:click", (args) => {
+        console.log(args.data.data);
+        let data = args.data.data;
+        let month = data.date.split("/")[1];
+        let name = data.name === "Фабрика А" ? 1 : 2;
+        navigate(`/details/${name}/${month}`, {
+          state: {
+            data,
+          },
         });
-      }
+      });
     },
   };
 

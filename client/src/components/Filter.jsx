@@ -1,53 +1,42 @@
-import React, { useContext } from "react";
-import { DownOutlined } from "@ant-design/icons";
-import { Dropdown, Space, Typography } from "antd";
+import React, { useContext, useEffect } from "react";
+import { Select } from "antd";
 import { Context } from "../Context";
+import Cookies from "universal-cookie";
 
 const Filter = () => {
-  var object = useContext(Context);
+  let object = useContext(Context);
 
-  const items = [
-    {
-      key: "1",
-      label: "Все продукты",
-      onClick: () => {
-        object.setProduct1(false);
-        object.setProduct2(false);
-      },
-    },
-    {
-      key: "2",
-      label: "Продукт 1",
-      onClick: () => {
-        object.setProduct1(true);
-        object.setProduct2(false);
-      },
-    },
-    {
-      key: "3",
-      label: "Продукт 2",
-      onClick: () => {
-        object.setProduct1(false);
-        object.setProduct2(true);
-      },
-    },
-  ];
+  const { Option } = Select;
+  const cookies = new Cookies();
+
+  useEffect(() => {
+    object.setDefaultValue(cookies.get("defaultValue"));
+  }, []);
 
   return (
-    <Dropdown
-      menu={{
-        items,
-        selectable: true,
-        defaultSelectedKeys: ["1"],
-      }}
-    >
-      <Typography.Link>
-        <Space>
-          Фильтр по типу продукции
-          <DownOutlined />
-        </Space>
-      </Typography.Link>
-    </Dropdown>
+    <>
+      Фильтр по типу продукции
+      <Select
+        defaultValue={cookies.get("defaultValue")}
+        style={{ marginLeft: "5px" }}
+        onSelect={(value) => {
+          if (value === "Все продукты") {
+            object.setDefaultValue("Все продукты");
+            cookies.set("defaultValue", "Все продукты", { path: "/" });
+          } else if (value === "Продукт 1") {
+            object.setDefaultValue("Продукт 1");
+            cookies.set("defaultValue", "Продукт 1", { path: "/" });
+          } else if (value === "Продукт 2") {
+            object.setDefaultValue("Продукт 2");
+            cookies.set("defaultValue", "Продукт 2", { path: "/" });
+          }
+        }}
+      >
+        <Option value="Все продукты">Все продукты</Option>
+        <Option value="Продукт 1">Продукт 1</Option>
+        <Option value="Продукт 2">Продукт 2</Option>
+      </Select>
+    </>
   );
 };
 
