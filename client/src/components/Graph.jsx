@@ -13,12 +13,7 @@ const DemoColumn = () => {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        let preData = [];
-
-        preData.push(res.factoryA);
-        preData.push(res.factoryB);
-
-        setData(preData.flat(Infinity));
+        setData(res.data);
       });
   }, []);
 
@@ -57,12 +52,13 @@ const DemoColumn = () => {
         console.log(args.data.data);
         let data = args.data.data;
         let month = data.date.split("/")[1];
-        let name = data.name === "Фабрика А" ? 1 : 2;
+        let name = data.name === "Фабрика А" ? "1" : "2";
         navigate(`/details/${name}/${month}`, {
           state: {
             data,
           },
         });
+        window.location.reload();
       });
     },
   };
