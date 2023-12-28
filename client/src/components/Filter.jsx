@@ -15,26 +15,26 @@ const Filter = () => {
 
   return (
     <>
-      Фильтр по типу продукции
+      Фильтр по типу показателей
       <Select
         defaultValue={cookies.get("defaultValue")}
         style={{ marginLeft: "5px" }}
         onSelect={(value) => {
-          if (value === "Все продукты") {
-            object.setDefaultValue("Все продукты");
-            cookies.set("defaultValue", "Все продукты", { path: "/" });
-          } else if (value === "Продукт 1") {
-            object.setDefaultValue("Продукт 1");
-            cookies.set("defaultValue", "Продукт 1", { path: "/" });
-          } else if (value === "Продукт 2") {
-            object.setDefaultValue("Продукт 2");
-            cookies.set("defaultValue", "Продукт 2", { path: "/" });
+          if (value === "Все показатели") {
+            object.setDefaultValue("Все показатели");
+            cookies.set("defaultValue", "Все показатели", { path: "/" });
+          } else if (value === "Показатель 1") {
+            object.setDefaultValue("Показатель 1");
+            cookies.set("defaultValue", "Показатель 1", { path: "/" });
+          } else if (value === "Показатель 2") {
+            object.setDefaultValue("Показатель 2");
+            cookies.set("defaultValue", "Показатель 2", { path: "/" });
           }
         }}
       >
-        <Option value="Все продукты">Все продукты</Option>
-        <Option value="Продукт 1">Продукт 1</Option>
-        <Option value="Продукт 2">Продукт 2</Option>
+        <Option value="Все показатели">Все показатели</Option>
+        <Option value="Показатель 1">Показатель 1</Option>
+        <Option value="Показатель 2">Показатель 2</Option>
       </Select>
     </>
   );

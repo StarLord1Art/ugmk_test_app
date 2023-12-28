@@ -1,6 +1,7 @@
 import React from "react";
 import { Pie } from "@ant-design/plots";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Details() {
   const { state } = useLocation();
@@ -8,12 +9,12 @@ function Details() {
 
   const data = [
     {
-      type: "Продукт 1",
-      value: state.data.product1,
+      type: "Показатель 1",
+      value: state.data.indicator1,
     },
     {
-      type: "Продукт 2",
-      value: state.data.product2,
+      type: "Показатель 2",
+      value: state.data.indicator2,
     },
   ];
 
@@ -40,9 +41,19 @@ function Details() {
 
   return (
     <>
+      <Link
+        to={"/"}
+        style={{
+          color: "black",
+          textDecoration: "none",
+          textAlign: "left",
+        }}
+      >
+        <h3 style={{ marginLeft: "50px" }}>Назад</h3>
+      </Link>
       <h1>
-        Статистика по продукции{" "}
-        {state.data.name === "Фабрика А" ? "фабрики А" : "фабрики Б"} за{" "}
+        Статистика по показателям{" "}
+        {state.data.name === "Объект 1" ? "Объекта 1" : "Объекта 2"} за{" "}
         {state.data.month}
       </h1>
       <Pie {...config} />

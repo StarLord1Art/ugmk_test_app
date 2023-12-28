@@ -7,6 +7,7 @@ import Details from "./components/Details";
 
 function App() {
   const [defaultValue, setDefaultValue] = useState("");
+  const [data, setData] = useState([]);
 
   const router = createBrowserRouter([
     {
@@ -24,6 +25,8 @@ function App() {
       value={{
         defaultValue: defaultValue,
         setDefaultValue: setDefaultValue,
+        data: data,
+        setData: setData,
       }}
     >
       <div className="App">
