@@ -13,7 +13,7 @@ function Main() {
     <>
       <div
         className="main_div"
-        style={{ width: "62%", textAlign: "right", padding: "5px" }}
+        style={{ width: "64%", textAlign: "right", padding: "5px" }}
       >
         <Filter />
       </div>
@@ -43,8 +43,8 @@ function Main() {
 
                 for (let i = 0; i <= 2; i++) {
                   result.sort((a, b) => {
-                    a = a.date.split("/");
-                    b = b.date.split("/");
+                    a = a.date.split(".");
+                    b = b.date.split(".");
 
                     return Number(a[i]) > Number(b[i])
                       ? 1
@@ -87,7 +87,7 @@ function Main() {
 
                 function reduceIndicators(name, month, monthName, arr, newArr) {
                   let indicator1 = arr.reduce((acc, item) => {
-                    if (item.date.split("/")[1] === month) {
+                    if (item.date.split(".")[1] === month) {
                       return acc + Math.round(Number(item.indicator1) / 1000);
                     } else {
                       return acc;
@@ -95,7 +95,7 @@ function Main() {
                   }, 0);
                   console.log(indicator1);
                   let indicator2 = arr.reduce((acc, item) => {
-                    if (item.date.split("/")[1] === month) {
+                    if (item.date.split(".")[1] === month) {
                       return acc + Math.round(Number(item.indicator2) / 1000);
                     } else {
                       return acc;
@@ -107,7 +107,7 @@ function Main() {
                     name: name,
                     sum: sum,
                     month: monthName,
-                    date: ` /${month}/2022`,
+                    date: ` /${month}/${arr[0].date.split(".")[2]}`,
                     indicator1: indicator1,
                     indicator2: indicator2,
                   });
@@ -115,63 +115,63 @@ function Main() {
 
                 reduceIndicators(
                   "Объект 1",
-                  "1",
+                  "01",
                   "Янв",
                   object1,
                   reducedIndicators1
                 );
                 reduceIndicators(
                   "Объект 1",
-                  "2",
+                  "02",
                   "Фев",
                   object1,
                   reducedIndicators1
                 );
                 reduceIndicators(
                   "Объект 1",
-                  "3",
+                  "03",
                   "Мар",
                   object1,
                   reducedIndicators1
                 );
                 reduceIndicators(
                   "Объект 1",
-                  "4",
+                  "04",
                   "Апр",
                   object1,
                   reducedIndicators1
                 );
                 reduceIndicators(
                   "Объект 1",
-                  "5",
+                  "05",
                   "Май",
                   object1,
                   reducedIndicators1
                 );
                 reduceIndicators(
                   "Объект 1",
-                  "6",
+                  "06",
                   "Июн",
                   object1,
                   reducedIndicators1
                 );
                 reduceIndicators(
                   "Объект 1",
-                  "7",
+                  "07",
                   "Июл",
                   object1,
                   reducedIndicators1
                 );
                 reduceIndicators(
                   "Объект 1",
-                  "8",
+                  "08",
                   "Авг",
                   object1,
                   reducedIndicators1
                 );
                 reduceIndicators(
                   "Объект 1",
-                  "9",
+                  "09",
                   "Сен",
                   object1,
                   reducedIndicators1
@@ -200,63 +200,63 @@ function Main() {
 
                 reduceIndicators(
                   "Объект 2",
-                  "1",
+                  "01",
                   "Янв",
                   object2,
                   reducedIndicators2
                 );
                 reduceIndicators(
                   "Объект 2",
-                  "2",
+                  "02",
                   "Фев",
                   object2,
                   reducedIndicators2
                 );
                 reduceIndicators(
                   "Объект 2",
-                  "3",
+                  "03",
                   "Мар",
                   object2,
                   reducedIndicators2
                 );
                 reduceIndicators(
                   "Объект 2",
-                  "4",
+                  "04",
                   "Апр",
                   object2,
                   reducedIndicators2
                 );
                 reduceIndicators(
                   "Объект 2",
-                  "5",
+                  "05",
                   "Май",
                   object2,
                   reducedIndicators2
                 );
                 reduceIndicators(
                   "Объект 2",
-                  "6",
+                  "06",
                   "Июн",
                   object2,
                   reducedIndicators2
                 );
                 reduceIndicators(
                   "Объект 2",
-                  "7",
+                  "07",
                   "Июл",
                   object2,
                   reducedIndicators2
                 );
                 reduceIndicators(
                   "Объект 2",
-                  "8",
+                  "08",
                   "Авг",
                   object2,
                   reducedIndicators2
                 );
                 reduceIndicators(
                   "Объект 2",
-                  "9",
+                  "09",
                   "Сен",
                   object2,
                   reducedIndicators2

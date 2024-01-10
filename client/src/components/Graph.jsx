@@ -9,15 +9,6 @@ const DemoColumn = () => {
   const navigate = useNavigate();
   const [redirectToPie, setRedirectToPie] = useState(false);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:3001/data")
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       console.log(res);
-  //       setData(res.data);
-  //     });
-  // }, []);
-
   const config = {
     data,
     isGroup: true,
@@ -48,25 +39,9 @@ const DemoColumn = () => {
         },
       ],
     },
-    // onReady: (plot) => {
-    //   plot.on("element:click", (args) => {
-    //     console.log(args.data.data);
-    //     let data = args.data.data;
-    //     let month = data.date.split("/")[1];
-    //     let name = data.name === "Объект 1" ? "1" : "2";
-    //     navigate(`/details/${name}/${month}`, {
-    //       state: {
-    //         data,
-    //       },
-    //     });
-    //     // window.location.reload();
-    //   });
-    // },
+
     onReady: (plot) => {
       plot.on("element:click", (args) => {
-        //   const choosMonth = args.data.data.month;
-        //   const factory_id = args.data.data.name;
-        //  const month_number = state.year.findIndex(element => element === choosMonth) + 1;
         let data = args.data.data;
         let month = data.date.split("/")[1];
         let name = data.name === "Объект 1" ? "1" : "2";
@@ -81,7 +56,6 @@ const DemoColumn = () => {
         data: redirectToPie.data,
       },
     });
-    // state.setPie(redirectToPie)
   }
 
   return <Column {...config} />;
